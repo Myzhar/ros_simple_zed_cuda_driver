@@ -1,0 +1,21 @@
+<launch>
+  <arg name="camera" default="zed" />
+  <node pkg="ros_simple_zed_cuda_driver" type="zed_simple_camera_node" name="zed_simple_camera_node" ns="$(arg camera)" output="screen">
+     <!-- Enable TF publishing. Disable if using a robot model -->
+     <param name="publish_tf" value="true"/>
+  </node>
+
+  <node pkg="depthimage_to_laserscan" type="depthimage_to_laserscan" name="depthimage_to_laserscan" output="screen"> 
+     <param name="scan_height" value="3"/>
+     <param name="output_frame_id" value="$(arg camera)_depth_frame"/>
+     <param name="range_min" value="0.5"/>
+     <param name="range_max" value="20.0"/>
+     <remap from="image" to="$(arg camera)/stereo/depth/image_rect"/>
+   </node>
+
+   <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher" args="0 0 0 0 0 0 rgb_frame $(arg camera)_depth_frame 100" output="screen" /> 
+
+ x y z yaw pitch roll frame_id child_frame_id
+
+</launch>
+
