@@ -2,7 +2,7 @@
 <package>
   <name>ros_simple_zed_cuda_driver</name>
   <version>0.1.0</version>
-  <description>ROS Package to connect to StereoLabs ZED cameras</description>
+  <description>Simple ROS Package to connect to StereoLabs ZED cameras</description>
 
   <author email="myzhar@robot-home.it">Walter 'Myzhar' Lucetti</author>
 

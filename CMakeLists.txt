@@ -15,7 +15,7 @@ project(ros_simple_zed_cuda_driver)
 
 ###############################################################################
 ## Options
-option( DEBUG_ACTIVE "Enable Debug build" ON )
+option( DEBUG_ACTIVE "Enable Debug build" OFF )
 
 if(DEBUG_ACTIVE)
     MESSAGE( "Debug compilation active" )
@@ -96,12 +96,9 @@ include_directories(${catkin_INCLUDE_DIRS})
 # SOURCES
 set(zed_SRC
     ${ros_simple_zed_cuda_driver_SOURCE_DIR}/src/zed_simple_camera_node.cpp
-    ${ros_simple_zed_cuda_driver_SOURCE_DIR}/src/PointCloud.cpp
 )
 
 set(zed_HDR
-    ${ros_simple_zed_cuda_driver_SOURCE_DIR}/src/PointCloud.hpp
-    ${ros_simple_zed_cuda_driver_SOURCE_DIR}/src/utils.hpp
 )
 ###############################################################################
 
