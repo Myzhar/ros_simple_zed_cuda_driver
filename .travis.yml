@@ -24,6 +24,10 @@ before_install: # Use this to prepare the system to install prerequisites or dep
    # Setup rosdep
   - sudo rosdep init
   - rosdep update
+   # Setup ZED Driver
+  - wget https://www.stereolabs.com/download_327af3/ZED_SDK_JTK1_v0.6.0_alpha.run
+  - chmod +x ZED_SDK_JTK1_v0.6.0_alpha.run
+  - sudo ./ZED_SDK_JTK1_v0.6.0_alpha.run
 install: # Use this to install any prerequisites or dependencies necessary to run your build
   # Create workspace
   - mkdir -p ~/ros/ws_or/src
