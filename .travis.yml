@@ -21,7 +21,7 @@ before_install: # Use this to prepare the system to install prerequisites or dep
   - export LD_LIBRARY_PATH=${CUDA_HOME}/lib64 
   - export PATH=${CUDA_HOME}/bin:${PATH}
    # Setup ZED Driver
-  - wget https://www.stereolabs.com/download_327af3/ZED_SDK_Linux_x86_64_v0.8.2c_beta.run 
+  - wget www.stereolabs.com/download_327af3/ZED_SDK_Linux_x86_64_v0.8.2c_beta.run 
   - chmod +x ZED_SDK_Linux_x86_64_v0.8.2c_beta.run 
   - sudo ./ZED_SDK_Linux_x86_64_v0.8.2c_beta.run
   # Define some config vars
