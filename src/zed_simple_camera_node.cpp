@@ -57,13 +57,21 @@ int main(int argc, char** argv)
     ros::init(argc, argv, "zed_simple_camera_node");
 
     ros::NodeHandle nh; // ROS node handler
+    ros::NodeHandle nhPriv("~"); // Private node handler to retrieve parameters
 
     // >>>>> ROS Params
-    string prefix = ros::this_node::getName();
+    if( nhPriv.hasParam( PAR_PUB_TF ) )
+    {
+        nhPriv.getParam( PAR_PUB_TF, publish_tf );
+    }
+    else
+    {
+        publish_tf = true;
+        nhPriv.setParam( PAR_PUB_TF, publish_tf );
+        ROS_INFO_STREAM( PAR_PUB_TF << " not present. Default value set" );
+    }
 
-    ROS_INFO_STREAM( "Node: " << prefix );
-
-    if( nh.hasParam( prefix+"/"+PAR_PUB_TF ) )
+    /*if( nh.hasParam( prefix+"/"+PAR_PUB_TF ) )
     {
         nh.getParam( prefix+"/"+PAR_PUB_TF, publish_tf );
     }
@@ -71,7 +79,7 @@ int main(int argc, char** argv)
     {
         publish_tf = true;
         nh.setParam( prefix+"/"+PAR_PUB_TF, publish_tf );
-    }
+    }*/
 
     ROS_INFO_STREAM( "Publish TF: " << (publish_tf?"Enable":"Disable"));
     // <<<<< ROS Params
