@@ -13,6 +13,10 @@ notifications:
     on_success: change #[always|never|change] # default: change
     on_failure: always #[always|never|change] # default: always
 before_install: # Use this to prepare the system to install prerequisites or dependencies
+   # Setup ZED Driver
+  - wget https://www.stereolabs.com/download_327af3/ZED_SDK_Linux_x86_64_v0.8.2c_beta.run
+  - chmod +x ZED_SDK_Linux_x86_64_v0.8.2c_beta.run 
+  - sudo ./ZED_SDK_Linux_x86_64_v0.8.2c_beta.run
    # Setup CUDA Driver
   - wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1204/x86_64/cuda-repo-ubuntu1204_7.0-28_amd64.deb
   - sudo dpkg -i cuda-repo-ubuntu1204_7.0-28_amd64.deb
@@ -21,10 +25,6 @@ before_install: # Use this to prepare the system to install prerequisites or dep
   - export CUDA_HOME=/usr/local/cuda-7.0 
   - export LD_LIBRARY_PATH=${CUDA_HOME}/lib64 
   - export PATH=${CUDA_HOME}/bin:${PATH}
-   # Setup ZED Driver
-  - wget https://www.stereolabs.com/download_327af3/ZED_SDK_Linux_x86_64_v0.8.2c_beta.run
-  - chmod +x ZED_SDK_Linux_x86_64_v0.8.2c_beta.run 
-  - sudo ./ZED_SDK_Linux_x86_64_v0.8.2c_beta.run
   # Define some config vars
   - export ROS_DISTRO=hydro
   - export CI_SOURCE_PATH=$(pwd)
