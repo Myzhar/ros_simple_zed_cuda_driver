@@ -26,8 +26,8 @@ before_install: # Use this to prepare the system to install prerequisites or dep
   - rosdep update
 install: # Use this to install any prerequisites or dependencies necessary to run your build
   # Create workspace
-  - mkdir -p ~/ros/ws_orsens/src
-  - cd ~/ros/ws_orsens/src
+  - mkdir -p ~/ros/ws_or/src
+  - cd ~/ros/ws_or/src
   - wstool init .
   - wstool update
   - ln -s $CI_SOURCE_PATH . # Link the repo we are testing to the new workspace
