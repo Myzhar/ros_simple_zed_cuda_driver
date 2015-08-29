@@ -13,9 +13,9 @@ notifications:
     on_failure: always #[always|never|change] # default: always
 before_install: # Use this to prepare the system to install prerequisites or dependencies
    # Setup ZED Driver
-  - wget https://www.stereolabs.com/download_327af3/ZED_SDK_JTK1_v0.6.0_alpha.run
-  - chmod +x ZED_SDK_JTK1_v0.6.0_alpha.run
-  - sudo ./ZED_SDK_JTK1_v0.6.0_alpha.run
+  - wget https://www.stereolabs.com/download_327af3/ZED_SDK_Linux_x86_64_v0.8.2c_beta.run
+  - chmod +x ZED_SDK_Linux_x86_64_v0.8.2c_beta.run
+  - sudo ./ZED_SDK_Linux_x86_64_v0.8.2c_beta.run
   # Define some config vars
   - export ROS_DISTRO=hydro
   - export CI_SOURCE_PATH=$(pwd)
