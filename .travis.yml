@@ -16,7 +16,7 @@ before_install: # Use this to prepare the system to install prerequisites or dep
    # Setup ZED Driver
   - wget http://myzharbot.robot-home.it/Download/ZED_SDK_Linux_x86_64_v0.8.2c_beta.run
   - chmod +x ZED_SDK_Linux_x86_64_v0.8.2c_beta.run 
-  - sudo ./ZED_SDK_Linux_x86_64_v0.8.2c_beta.run -Y
+  - sudo ./ZED_SDK_Linux_x86_64_v0.8.2c_beta.run
    # Setup CUDA Driver
   - wget "http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1204/x86_64/cuda-repo-ubuntu1204_7.0-28_amd64.deb"
   - sudo dpkg -i cuda-repo-ubuntu1204_7.0-28_amd64.deb
