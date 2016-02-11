@@ -49,7 +49,7 @@ endif(COMMAND cmake_policy)
 SET(LINUX_ONLY_LIBRARIES "")
 
 SET(ZED_DIR "/usr/local/zed/")
-find_package(ZED 1.0 REQUIRED)
+find_package(ZED 0.9.2 REQUIRED)
 #find_package(GLUT)
 SET(LINUX_ONLY_LIBRARIES pthread npps nppi)
 
